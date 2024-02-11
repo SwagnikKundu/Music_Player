@@ -1,0 +1,25 @@
+[
+    { "title": "My Playlist", 
+    "songs": [{
+        "name": "Aaoge Tum Kabhi",
+        "artist": "Ustad Rashid Khan",
+        "img": "media/images/jab-we-met.jpg",
+        "genre": "Classical",
+        "source": "media/song/jab-we-met.mp3"
+      },
+      {
+        "name": "Albela Sajan",
+        "artist": ["Ustad Sultan Khan","Shankar Mahadevan","Kavita Krishnamurthy"],
+        "img": "media/images/Albela-Sajan.jpg",
+        "genre": "Classical",
+        "source": "media/song/Albela-Sajan.mp3"
+      },
+      {
+        "name": "Chaudhary",
+        "artist": ["Amit Trivedi","Mame Khan"],
+        "img": "media/images/chaudhary.jpg",
+        "genre": "Folk",
+        "source": "media/song/chaudhary.mp3"
+      }
+    ]}
+]

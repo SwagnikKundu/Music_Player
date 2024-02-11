@@ -1,0 +1,83 @@
+[
+    {
+      "id": 1,
+      "name": "Aaoge Tum Kabhi",
+      "artist": "Ustad Rashid Khan",
+      "img": "media/images/jab-we-met.jpg",
+      "genre": "Classical",
+      "source": "media/song/jab-we-met.mp3"
+    },
+    {
+      "id": 2,
+      "name": "Namo Namo",
+      "artist": "Amit Trivedi",
+      "img": "media/images/namo-namo.jpg",
+      "genre": "Devotional",
+      "source": "media/song/namo-namo.mp3"
+    },
+    {
+      "id": 3,
+      "name": "Tera Zikr",
+      "artist": ["Sanjay Leela Bhansali", "Rakesh Pandit", "Shail Hada"],
+      "img": "media/images/tera-zikr.jpg",
+      "genre": "Classical",
+      "source": "media/song/tera-zikr.mp3"
+    },
+    {
+      "id": 4,
+      "name": "Albela Sajan",
+      "artist": ["Ustad Sultan Khan","Shankar Mahadevan","Kavita Krishnamurthy"],
+      "img": "media/images/Albela-Sajan.jpg",
+      "genre": "Classical",
+      "source": "media/song/Albela-Sajan.mp3"
+    },
+    {
+      "id": 5,
+      "name": "Chaudhary",
+      "artist": ["Amit Trivedi","Mame Khan"],
+      "img": "media/images/chaudhary.jpg",
+      "genre": "Folk",
+      "source": "media/song/chaudhary.mp3"
+    },
+    {
+      "id": 6,
+      "name": "Shree Hanuman Chalisa",
+      "artist": "Gulshan Kumar",
+      "img": "media/images/shree-hanuman-chalisa.jpg",
+      "genre": "Devotional",
+      "source": "media/song/shree-hanuman-chalisa.mp3"
+    },
+    {
+        "id": 7,
+        "name": "Banka Nodi",
+        "artist": "Fakira",
+        "img": "media/images/banka-nodi.jpg",
+        "genre": "Indie",
+        "source": "media/song/banka-nodi.mp3"
+      },
+      {
+        "id": 8,
+        "name": "Jeena Haraam",
+        "artist": ["Tanishk Bagchi", "Vishal Mishra", "Shilpa Rao"],
+        "img": "media/images/jeena-haraam.jpeg",
+        "genre": "Bollywood",
+        "source": "media/song/jeena-haraam.mp3"
+      },
+      {
+        "id": 9,
+        "name": "Avidyanam Antas Timira",
+        "artist": "Brodha V",
+        "img": "media/images/antas.jpg",
+        "genre": "Indie",
+        "source": "media/song/antas.mp3"
+      },
+      {
+        "id": 10,
+        "name": "Nashe Si Chadh Gayi",
+        "artist": ["Vishal & Shekhar", "Arijit Singh", "Caralisa Monteiro", "Jaideep Sahni"],
+        "img": "media/images/nashe-si.jpg",
+        "genre": "Bollywood",
+        "source": "media/song/nashe-si.mp3"
+      }
+  ]
+  
