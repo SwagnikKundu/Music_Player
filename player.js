@@ -41,7 +41,6 @@ function toggleTheme() {
 }
 
 function renderCurrentSong(song) {
-  console.log(song);
   curSong = song;      
   // Set the source of the image and audio elements
   songImage.src = song.img; // Assuming the JSON data has an 'image' field for each song
@@ -76,19 +75,13 @@ fetch('music.json')
 
 
       const searchInput = document.getElementById("search-input");
-      searchInput.addEventListener("keyup", function (event) {
-        if (event.key === "Enter"){
-          console.log(searchInput.value);
-          const searchTerm = searchInput.value.trim().toLowerCase();
-          const filteredSongs = jsonData.filter(song => song.name.toLowerCase().includes(searchTerm));
-          displaySongs(filteredSongs);
-        }
-        if(event.key ==="Backspace"){
-          searchInput.value="";
-          displaySongs(jsonData);
-        }
-        
+      searchInput.addEventListener("input", function(event) {
+        const searchTerm = searchInput.value.trim().toLowerCase();
+        const filteredSongs = jsonData.filter(song => song.name.toLowerCase().includes(searchTerm));
+        displaySongs(filteredSongs);
       });
+
+      
 
       
 
@@ -173,16 +166,17 @@ fetch('music.json')
             });
         }
 
-        let currentindex = 0;
-        let songQueue = [...playlistData[currentindex].songs];
+        let currentIndex = 0;
+        let songQueue =[];
         
 
-        console.log(songQueue);
-
+        
         function selectPlaylist(playlist) {
             for(let i in playlistData){
-              if(i.title===playlist.title){
-                currentindex=i;
+              if(playlistData[i].title===playlist.title){
+                currentIndex=i;
+                songQueue=[];
+                songQueue=[...playlistData[i].songs];
               }
             }
             
@@ -209,8 +203,10 @@ fetch('music.json')
 
           function deleteSong(index) {
             songQueue.splice(index, 1); // Remove song from the playlist array
-            playlistData[currentindex].songs=[...songQueue];
-            selectPlaylist(playlistData[currentindex]); // Re-display the updated playlist
+            console.log(currentIndex);
+            playlistData[currentIndex].songs =[];
+            playlistData[currentIndex].songs=[...songQueue];
+            selectPlaylist(playlistData[currentIndex]); // Re-display the updated playlist
           }
         }
 
@@ -232,7 +228,7 @@ fetch('music.json')
         submitPlaylist.addEventListener('click', createPlaylist);
 
         displayPlaylists();
-        selectPlaylist(playlistData[currentindex]);
+        selectPlaylist(playlistData[currentIndex]);
 
         const next= document.querySelector('#nextButton');
         next.addEventListener('click',nextSong);
@@ -262,8 +258,8 @@ fetch('music.json')
           if (songQueue.length > 0) {
             const nextSong = songQueue.shift();
             songQueue.push(nextSong);
-            playlistData[currentindex].songs=[...songQueue];
-            selectPlaylist(playlistData[currentindex]);
+            playlistData[currentIndex].songs=[...songQueue];
+            selectPlaylist(playlistData[currentIndex]);
             selectSong(songQueue[0]);
           } else {
               console.log("End of playlist.");
@@ -276,8 +272,8 @@ fetch('music.json')
           if (songQueue.length > 0) {
             const prevSong = songQueue.pop();
             songQueue.unshift(prevSong);
-            playlistData[currentindex].songs=[...songQueue];
-            selectPlaylist(playlistData[currentindex]);
+            playlistData[currentIndex].songs=[...songQueue];
+            selectPlaylist(playlistData[currentIndex]);
             selectSong(songQueue[0]);
           } else {
               console.log("End of playlist.");
@@ -293,8 +289,8 @@ fetch('music.json')
           if (!existingSong) {
               // Song does not exist, add it to the playlist
               songQueue.push(song);
-              playlistData[currentindex].songs=[...songQueue];
-              selectPlaylist(playlistData[currentindex]);
+              playlistData[currentIndex].songs=[...songQueue];
+              selectPlaylist(playlistData[currentIndex]);
               console.log(`Song "${song.name}" added to the playlist.`);
           } else {
               console.log(`Song "${song.name}" already exists in the playlist.`);
